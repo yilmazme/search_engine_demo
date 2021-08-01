@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -12,15 +13,19 @@
     </head>
 
     <body>
-        <div class="container-fluid text-center position-absolute top-50 start-50 translate-middle">
-            <div class="searchDiv ">
+        <div class="main text-center ">
+            <div class="searchDivRes ">
                 <a href="./index.html" class="btn btn-info">Home Page</a>
-                <form onsubmit="return onSubmit(event)">
+                <button id="sortBtn">sort</button>
+                <button id="sortDateBtn">sort date</button>
+                <form action="./results.html">
                     <input type="text" name="search" id="searchRes" autofocus required>
-                    <button type="submit" class="btn btn-small">Search</button>
+                    <button type="submit" class="btn btn-small btn-info">Search</button>
                 </form>
+                <hr />
+                <ul class="list-group" id="listRes"></ul>
             </div>
-            <ul class="list-group" id="listRes"></ul>
+            <ul class="list-group" id="staticList"></ul>
         </div>
 
         <script type="module" src="./results.js">
@@ -31,6 +36,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
+
     </body>
 
 </html>

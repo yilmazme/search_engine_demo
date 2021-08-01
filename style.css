@@ -1,14 +1,13 @@
-body{
+body {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
-.main{
-
-  width: 100vw;
+.main {
+  width: 100%;
   height: 100vh;
 }
-.searchDiv{
+.searchDiv {
   background-color: white;
   position: absolute;
   top: 40%;
@@ -16,7 +15,27 @@ body{
   transform: translate(-50%, 0);
   min-width: 600px;
 }
-input{
+.searchDivRes {
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  min-width: 600px;
+  z-index: 3;
+}
+#staticList {
+  background-color: white;
+  position: fixed;
+  top: 30vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: 720px;
+  z-index: 2;
+}
+#listRes {
+  z-index: 3;
+}
+input {
   width: 80%;
   height: 2.4rem;
   margin: 5px;
@@ -35,17 +54,17 @@ li:hover {
   color: white;
 }
 
-a{
+a {
   text-decoration: none;
   color: #333;
 }
 
 @media (max-width: 620px) {
- .searchDiv{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: flex-start;
- }
+  .searchDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
