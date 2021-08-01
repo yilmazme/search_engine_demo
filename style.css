@@ -1,0 +1,51 @@
+body{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.main{
+
+  width: 100vw;
+  height: 100vh;
+}
+.searchDiv{
+  background-color: white;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: 600px;
+}
+input{
+  width: 80%;
+  height: 2.4rem;
+  margin: 5px;
+  border-radius: 5px;
+}
+li {
+  cursor: pointer;
+}
+li:hover {
+  background-color: #333;
+  color: white;
+}
+
+.btn {
+  background-color: #204080;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+@media (max-width: 620px) {
+ .searchDiv{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+ }
+}
