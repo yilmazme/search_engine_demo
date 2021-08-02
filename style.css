@@ -11,7 +11,7 @@ body {
 .searchDiv {
   background-color: white;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, 0);
   min-width: 600px;
@@ -24,22 +24,64 @@ body {
   min-width: 700px;
   z-index: 3;
 }
-.upperSearchDiv{
+img {
+  border-top-right-radius: 6%;
+  border-bottom-left-radius: 6%;
+  margin-right: 1rem;
+}
+
+.upperSearchDiv {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
+  align-items: flex-end;
 }
 .listContainer {
   background-color: white;
   position: absolute;
-  top: 20vh;
-  left: 40%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, 0);
   min-width: 720px;
   z-index: 2;
 }
+#list {
+}
+.pDiv {
+  display: grid;
+  grid-template-columns: auto auto;
+  border-bottom: 1px #333 solid;
+  height: 4rem;
+}
+.pDiv p {
+  height: 1rem;
+  margin: 5px;
+  text-align: left;
+  font-size: 0.87rem;
+}
+.pDiv:hover {
+  background-color: rgb(219, 213, 213);
+}
+.staticPDiv {
+  display: grid;
+  grid-template-columns: auto auto;
+  border-bottom: 1px #333 solid;
+  height: 4rem;
+}
+.staticPDiv p {
+  height: 1rem;
+  margin: 5px;
+  text-align: left;
+  font-size: 0.87rem;
+}
+.staticPDiv:hover {
+  background-color: rgb(219, 213, 213);
+}
+
 #listRes {
   z-index: 3;
+  box-shadow: black 3px 3px 3px;
+  background-color: rgb(197, 196, 194);
 }
 input {
   min-width: 400px;
@@ -49,26 +91,21 @@ input {
   padding: 4px;
 }
 
-li {
-  cursor: pointer;
-}
-li:hover {
-  background-color: rgb(212, 207, 207);
-  color: black;
-}
-
-.btn {
+#btnMain,
+#btnRes {
   background-color: #204080;
   color: white;
-margin-bottom: 6px;
-
+  margin-bottom: 6px;
 }
 
 a {
   text-decoration: none;
   color: #333;
 }
-
+form {
+  margin-top: 1rem;
+  margin-bottom: 0px;
+}
 @media (max-width: 620px) {
   .searchDiv {
     display: flex;
@@ -77,4 +114,8 @@ a {
     justify-content: center;
     align-items: flex-start;
   }
+}
+.personName {
+  font-weight: bold;
+  text-transform: capitalize;
 }
