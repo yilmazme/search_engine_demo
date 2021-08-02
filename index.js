@@ -7,9 +7,10 @@ const Query = document.getElementById("search");
 
 export var objArray = [];
 
+// verilen json datayı object array haline getirir
 for(let i = 0; i< Data.data.length; i++){
   let obj ={
-    NameSurname: Data.data[i][0],
+    NameSurname: Data.data[i][0].toLowerCase(),
     Company:Data.data[i][1],
     Email:Data.data[i][2],
     Date:Data.data[i][3],
@@ -19,10 +20,10 @@ for(let i = 0; i< Data.data.length; i++){
 objArray.push(obj)
 
 }
-console.log(objArray[0].NameSurname)
 
 
 
+//öneri listesini oluşturur
 function setList(group) {
   clearList();
   if(group.length === 0){
@@ -38,6 +39,7 @@ function setList(group) {
     }
     const item = document.createElement("li");
     item.classList.add("list-group-item");
+    item.classList.add("text-info");
     const text = document.createTextNode("Show More");
     const link = document.createElement("a");
     link.href="./results.html"
@@ -55,6 +57,7 @@ function setList(group) {
     }
     const item = document.createElement("li");
     item.classList.add("list-group-item");
+    item.classList.add("tex-info");
     const text = document.createTextNode("Show More");
     const link = document.createElement("a");
     link.href="./results.html"
@@ -63,20 +66,23 @@ function setList(group) {
     List.appendChild(item);
   }
 }
+//yeni aramada yeni öneriler eskisini eklenmesini önler, eskileri siler
 function clearList() {
   while (List.firstChild) {
     List.removeChild(List.firstChild);
   }
 }
-
+// sonuç yoks uyarı ekler
 function setNoResult() {
   let item = document.createElement("li");
   item.classList.add("list-group-item");
+  item.classList.add("text-danger");
   let text = document.createTextNode("No Result!");
   item.appendChild(text);
   List.appendChild(item);
 }
 
+// arama ifadesinin bulunduğu yere göre öncelik tanır, baştaysa önde gelir
 function getRelevant(value, query) {
   if (value === query) {
     return 3;
@@ -90,6 +96,8 @@ function getRelevant(value, query) {
 
 var passValue=[];
 
+
+// inputa göre object arrayi filtreler 
 if(Query){
   Query.addEventListener("input", (event) => {
     let value = event.target.value;

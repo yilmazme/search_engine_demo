@@ -21,14 +21,19 @@ body {
   position: absolute;
   top: 10%;
   left: 20%;
-  min-width: 600px;
+  min-width: 700px;
   z-index: 3;
 }
-#staticList {
+.upperSearchDiv{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.listContainer {
   background-color: white;
   position: absolute;
-  top: 30vh;
-  left: 50%;
+  top: 20vh;
+  left: 40%;
   transform: translate(-50%, 0);
   min-width: 720px;
   z-index: 2;
@@ -37,23 +42,26 @@ body {
   z-index: 3;
 }
 input {
-  width: 80%;
+  min-width: 400px;
   height: 2.4rem;
   margin: 5px;
   border-radius: 5px;
+  padding: 4px;
 }
 
 li {
   cursor: pointer;
 }
 li:hover {
-  background-color: #333;
-  color: white;
+  background-color: rgb(212, 207, 207);
+  color: black;
 }
 
 .btn {
   background-color: #204080;
   color: white;
+margin-bottom: 6px;
+
 }
 
 a {
