@@ -117,6 +117,10 @@ form {
   body{
     overflow: scroll;
   }
+  .main{
+    overflow: scroll;
+    margin: auto;
+  }
   .searchDiv {
     display: flex;
     flex-direction: column;
@@ -138,12 +142,10 @@ form {
     margin: auto;
   }
   .listContainer{
-  
     width: fit-content;
-    margin-top: 4.5rem;
+    margin-top: 7rem;
   }
   #staticList{
-    
     width: fit-content;
     margin: auto;
   }
@@ -153,4 +155,5 @@ form {
   #searchRes{
     margin-top: 1rem;
   }
+
 }
