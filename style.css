@@ -20,14 +20,16 @@ body {
   background-color: white;
   position: absolute;
   top: 10%;
-  left: 20%;
-  min-width: 700px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
   z-index: 3;
 }
 img {
   border-top-right-radius: 6%;
   border-bottom-left-radius: 6%;
   margin-right: 1rem;
+
 }
 
 .upperSearchDiv {
@@ -45,8 +47,7 @@ img {
   min-width: 720px;
   z-index: 2;
 }
-#list {
-}
+
 .pDiv {
   display: grid;
   grid-template-columns: auto auto;
@@ -106,16 +107,47 @@ form {
   margin-top: 1rem;
   margin-bottom: 0px;
 }
-@media (max-width: 620px) {
-  .searchDiv {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-}
+
 .personName {
   font-weight: bold;
   text-transform: capitalize;
+}
+
+@media (max-width: 760px) {
+  .searchDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .upperSearchDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .listContainer{
+  
+    width: fit-content;
+    margin-top: 3rem;
+  }
+  #staticList{
+    
+    width: fit-content;
+    margin: auto;
+  }
+  #btnRes{
+    margin-top: 1rem;
+  }
+  #searchRes{
+    margin-top: 1rem;
+  }
 }
