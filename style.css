@@ -114,6 +114,9 @@ form {
 }
 
 @media (max-width: 760px) {
+  body{
+    overflow: scroll;
+  }
   .searchDiv {
     display: flex;
     flex-direction: column;
@@ -137,7 +140,7 @@ form {
   .listContainer{
   
     width: fit-content;
-    margin-top: 3rem;
+    margin-top: 4.5rem;
   }
   #staticList{
     
