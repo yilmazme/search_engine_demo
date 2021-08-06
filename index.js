@@ -2,6 +2,7 @@ import { Data } from "./Data.js";
 
 const List = document.getElementById("list");
 const Query = document.getElementById("search");
+const test = document.getElementById("test");
 
 export var objArray = [];
 
@@ -20,11 +21,14 @@ for (let i = 0; i < Data.data.length; i++) {
 
 //öneri listesini oluşturur
 function setList(group) {
+  let str = Query.value;
+  let regx = new RegExp(str, "gi");
+
   clearList();
   if (group.length === 0) {
     setNoResult();
   } else {
-    for (const person of group.slice(0, 3)) {
+    for (const person of group.slice(0, 4)) {
       const pDiv = document.createElement("div");
       pDiv.classList.add("pDiv");
 
@@ -32,6 +36,10 @@ function setList(group) {
       item.classList.add("personName");
       const text = document.createTextNode(person.NameSurname);
       item.appendChild(text);
+      item.innerHTML = item.childNodes[0].nodeValue.replace(
+        regx,
+        `<b>${str}</b>`
+      );
       pDiv.appendChild(item);
 
       const item2 = document.createElement("p");
@@ -39,6 +47,10 @@ function setList(group) {
       item2.classList.add("text-end");
       const text2 = document.createTextNode(person.Country);
       item2.appendChild(text2);
+      item2.innerHTML = item2.childNodes[0].nodeValue.replace(
+        regx,
+        `<b>${str}</b>`
+      );
       pDiv.appendChild(item2);
 
       const item3 = document.createElement("p");
@@ -106,8 +118,12 @@ if (Query) {
       value = value.trim().toLowerCase();
       setList(
         objArray
+
           .filter((person) => {
-            return person.NameSurname.includes(value);
+            return (
+              person.NameSurname.includes(value) ||
+              person.Country.includes(value)
+            );
           })
           .sort((p1, p2) => {
             return (

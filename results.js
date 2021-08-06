@@ -16,6 +16,8 @@ Query.addEventListener("focusout", () => {
 
 // input anında önerileri listeler
 function setList(group) {
+  let str = Query.value;
+  let regx = new RegExp(str, "gi");
   clearList();
   if (group.length === 0) {
     setNoResult();
@@ -28,6 +30,10 @@ function setList(group) {
     item.classList.add("personName");
     const text = document.createTextNode(person.NameSurname);
     item.appendChild(text);
+    item.innerHTML = item.childNodes[0].nodeValue.replace(
+      regx,
+      `<b>${str}</b>`
+    );
     pDiv.appendChild(item);
 
     const item2 = document.createElement("p");
@@ -35,6 +41,10 @@ function setList(group) {
     item2.classList.add("text-end");
     const text2 = document.createTextNode(person.Country);
     item2.appendChild(text2);
+    item2.innerHTML = item2.childNodes[0].nodeValue.replace(
+      regx,
+      `<b>${str}</b>`
+    );
     pDiv.appendChild(item2);
 
     const item3 = document.createElement("p");
@@ -96,7 +106,9 @@ window.addEventListener("load", () => {
     value = value.trim().toLowerCase();
     filteredArray = objArray
       .filter((person) => {
-        return person.NameSurname.includes(value);
+        return (
+          person.NameSurname.includes(value) || person.Country.includes(value)
+        );
       })
       .sort((p1, p2) => {
         return (
@@ -125,7 +137,9 @@ Query.addEventListener("input", (event) => {
     setList(
       objArray
         .filter((person) => {
-          return person.NameSurname.includes(value);
+          return (
+            person.NameSurname.includes(value) || person.Country.includes(value)
+          );
         })
         .sort((p1, p2) => {
           return (
@@ -207,6 +221,8 @@ NextBtn.addEventListener("click", () => {
 });
 
 function changePage(page) {
+  let str = Query.value;
+  let regx = new RegExp(str, "gi");
   clearStaticList();
   var page_span = document.getElementById("page");
 
@@ -228,6 +244,10 @@ function changePage(page) {
       item.classList.add("personName");
       const text = document.createTextNode(filteredArray[i].NameSurname);
       item.appendChild(text);
+      item.innerHTML = item.childNodes[0].nodeValue.replace(
+        regx,
+        `<b>${str}</b>`
+      );
       pResDiv.appendChild(item);
 
       const item1 = document.createElement("p");
@@ -235,6 +255,10 @@ function changePage(page) {
       item1.classList.add("text-end");
       const text1 = document.createTextNode(filteredArray[i].Country);
       item1.appendChild(text1);
+      item1.innerHTML = item1.childNodes[0].nodeValue.replace(
+        regx,
+        `<b>${str}</b>`
+      );
       pResDiv.appendChild(item1);
 
       const item2 = document.createElement("p");
