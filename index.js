@@ -2,7 +2,6 @@ import { Data } from "./Data.js";
 
 const List = document.getElementById("list");
 const Query = document.getElementById("search");
-const test = document.getElementById("test");
 
 export var objArray = [];
 
