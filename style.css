@@ -38,7 +38,6 @@ img {
   display: flex;
   justify-content: stretch;
   align-items: flex-end;
-  background-color: rgb(211, 203, 203);
 }
 .listContainer {
   background-color: white;
